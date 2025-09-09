@@ -1,4 +1,4 @@
-package com.Desafio.LoginApi.Domain.Dto;
+package com.Desafio.LoginApi.Application.Dto;
 
 public class LoginResponse {
     private Boolean success;

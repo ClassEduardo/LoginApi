@@ -1,4 +1,4 @@
-package com.Desafio.LoginApi.Infrastructure.Repository;
+package com.Desafio.LoginApi.Application.Interfaces;
 
 import java.util.Optional;
 

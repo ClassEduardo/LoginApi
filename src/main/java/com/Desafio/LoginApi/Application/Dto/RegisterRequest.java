@@ -1,6 +1,6 @@
-package com.Desafio.LoginApi.Domain.Dto;
+package com.Desafio.LoginApi.Application.Dto;
 
-public class LoginRequest {
+public class RegisterRequest {
     private String username;
     private String password;
 

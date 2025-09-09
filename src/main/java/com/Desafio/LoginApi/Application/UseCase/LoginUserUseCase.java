@@ -1,22 +1,19 @@
 package com.Desafio.LoginApi.Application.UseCase;
 
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.*;
+import java.util.function.*;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.Desafio.LoginApi.Application.Interfaces.IJwtUtil;
+import com.Desafio.LoginApi.Application.Interfaces.*;
 import com.Desafio.LoginApi.Domain.Model.User;
-import com.Desafio.LoginApi.Infrastructure.Repository.UserRepository;
-import com.Desafio.LoginApi.Infrastructure.Security.JwtUtil;
 
-public class LoginUserUseCase {
-    private final UserRepository _userRepository;
+public class LoginUserUseCase implements ILoginUserUseCase {
+    private final UserRepository _userRepository;   
     private final PasswordEncoder _passwordEncoder;
     private final IJwtUtil _jwtUtil;
 
-    LoginUserUseCase(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
+    LoginUserUseCase(UserRepository userRepository, PasswordEncoder passwordEncoder, IJwtUtil jwtUtil) {
         this._userRepository = userRepository;
         this._passwordEncoder = passwordEncoder;
         this._jwtUtil = jwtUtil;

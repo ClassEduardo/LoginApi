@@ -1,15 +1,15 @@
-package com.Desafio.LoginApi.Interfaces.Controller;
+package com.Desafio.LoginApi.Api.Controller;
 
 import java.util.function.Function;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import com.Desafio.LoginApi.Application.UseCase.LoginUserUseCase;
-import com.Desafio.LoginApi.Application.UseCase.RegisterUserUseCase;
-import com.Desafio.LoginApi.Domain.Dto.LoginRequest;
-import com.Desafio.LoginApi.Domain.Dto.LoginResponse;
+import org.springframework.web.bind.annotation.*;
+
+import com.Desafio.LoginApi.Application.Dto.*;
+import com.Desafio.LoginApi.Application.UseCase.*;
 import com.Desafio.LoginApi.Domain.Model.User;
 
+@RequestMapping
+@RestController
 public class AuthController {
     private final RegisterUserUseCase _registerUserUseCase;
     private final LoginUserUseCase _loginUserUseCase;
