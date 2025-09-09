@@ -6,14 +6,15 @@ import java.util.function.Predicate;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.Desafio.LoginApi.Application.Interfaces.IJwtUtil;
 import com.Desafio.LoginApi.Domain.Model.User;
-import com.Desafio.LoginApi.Domain.Repository.UserRepository;
+import com.Desafio.LoginApi.Infrastructure.Repository.UserRepository;
 import com.Desafio.LoginApi.Infrastructure.Security.JwtUtil;
 
 public class LoginUserUseCase {
     private final UserRepository _userRepository;
     private final PasswordEncoder _passwordEncoder;
-    private final JwtUtil _jwtUtil;
+    private final IJwtUtil _jwtUtil;
 
     LoginUserUseCase(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this._userRepository = userRepository;
@@ -29,5 +30,4 @@ public class LoginUserUseCase {
                 .filter(matchPassword)
                 .map(generateToken);
     }
-
 }

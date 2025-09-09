@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.Desafio.LoginApi.Application.UseCase.LoginUserUseCase;
 import com.Desafio.LoginApi.Application.UseCase.RegisterUserUseCase;
+import com.Desafio.LoginApi.Domain.Dto.LoginRequest;
+import com.Desafio.LoginApi.Domain.Dto.LoginResponse;
 import com.Desafio.LoginApi.Domain.Model.User;
-import com.Desafio.LoginApi.Interfaces.Dto.LoginRequest;
-import com.Desafio.LoginApi.Interfaces.Dto.LoginResponse;
 
 public class AuthController {
     private final RegisterUserUseCase _registerUserUseCase;

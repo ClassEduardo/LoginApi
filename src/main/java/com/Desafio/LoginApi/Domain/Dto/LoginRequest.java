@@ -1,4 +1,4 @@
-package com.Desafio.LoginApi.Interfaces.Dto;
+package com.Desafio.LoginApi.Domain.Dto;
 
 public class LoginRequest {
     private String username;

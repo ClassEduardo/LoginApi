@@ -4,11 +4,13 @@ import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Component;
 
+import com.Desafio.LoginApi.Application.Interfaces.IJwtUtil;
+
 import java.security.Key;
 import java.util.Date;
 
 @Component
-public class JwtUtil {
+public class JwtUtil implements IJwtUtil {
     private static final long EXPIRATION_TIME = 1000 * 60 * 60;
     private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 

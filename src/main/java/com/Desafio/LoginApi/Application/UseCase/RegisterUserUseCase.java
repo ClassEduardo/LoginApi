@@ -4,7 +4,7 @@ package com.Desafio.LoginApi.Application.UseCase;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.Desafio.LoginApi.Domain.Model.User;
-import com.Desafio.LoginApi.Domain.Repository.UserRepository;
+import com.Desafio.LoginApi.Infrastructure.Repository.UserRepository;
 
 public class RegisterUserUseCase {
     private final UserRepository _userRepository;
