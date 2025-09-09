@@ -5,16 +5,17 @@ import java.util.function.Function;
 import org.springframework.web.bind.annotation.*;
 
 import com.Desafio.LoginApi.Application.Dto.*;
-import com.Desafio.LoginApi.Application.UseCase.*;
+import com.Desafio.LoginApi.Application.Interfaces.ILoginUserUseCase;
+import com.Desafio.LoginApi.Application.Interfaces.IRegisterUserUseCase;
 import com.Desafio.LoginApi.Domain.Model.User;
 
-@RequestMapping
 @RestController
+@RequestMapping("/api")
 public class AuthController {
-    private final RegisterUserUseCase _registerUserUseCase;
-    private final LoginUserUseCase _loginUserUseCase;
+    private final IRegisterUserUseCase _registerUserUseCase;
+    private final ILoginUserUseCase _loginUserUseCase;
 
-    public AuthController(RegisterUserUseCase registerUserUseCase, LoginUserUseCase loginUserUseCase) {
+    public AuthController(IRegisterUserUseCase registerUserUseCase, ILoginUserUseCase loginUserUseCase) {
         this._registerUserUseCase = registerUserUseCase;
         this._loginUserUseCase = loginUserUseCase;
     }
