@@ -11,14 +11,14 @@ import java.util.Date;
 
 @Component
 public class JwtUtil implements IJwtUtil {
-    private static final long EXPIRATION_TIME = 1000 * 60 * 60;
+    private static final Date EXPIRATION_TIME = new Date(System.currentTimeMillis() + 3600000);
     private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     public String GenerateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 3600000)) // 1 hora
+                .setExpiration(EXPIRATION_TIME) // 1 hora
                 .signWith(key)
                 .compact();
     }
